@@ -1,0 +1,7 @@
+# Ignore artifact
+.next
+coverage
+
+# Ignore file
+*.md
+tailwind.config.js

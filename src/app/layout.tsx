@@ -3,6 +3,7 @@ import '@/styles/globals.css';
 import { Inter } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import { Toaster } from '@/components/ui/Toaster';
+import Providers from '@/components/Providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,12 +31,13 @@ export default function RootLayout({
         className="min-h-screen bg-slate-50 pt-12 antialiased"
         suppressHydrationWarning={true}
       >
-        <Navbar />
-        {authModal}
-        <div className="container mx-auto h-full max-w-7xl pt-12">
-          {children}
-        </div>
-
+        <Providers>
+          <Navbar />
+          {authModal}
+          <div className="container mx-auto h-full max-w-7xl pt-12">
+            {children}
+          </div>
+        </Providers>
         <Toaster />
       </body>
     </html>

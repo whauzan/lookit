@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { buttonVariants } from './ui/Button';
 import { getAuthSession } from '@/lib/auth';
+import UserAccountNav from './UserAccountNav';
 
 const Navbar = async () => {
   const session = await getAuthSession();
@@ -16,6 +17,7 @@ const Navbar = async () => {
               width={100}
               height={100}
               alt="Lookit Logo"
+              priority
             />
           </div>
           <div className="hidden w-24 sm:w-20 md:block">
@@ -30,8 +32,10 @@ const Navbar = async () => {
 
         {/* Search Bar */}
 
-        {session ? (
-          <p>{session.user.name}</p>
+        {session?.user ? (
+          <p>
+            <UserAccountNav user={session.user} />
+          </p>
         ) : (
           <Link className={buttonVariants()} href={'/sign-in'}>
             Sign In

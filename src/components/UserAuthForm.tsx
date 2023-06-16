@@ -36,6 +36,8 @@ const UserAuthForm: FC<UserAuthFormProps> = ({ className, ...props }) => {
         isLoading={isLoading}
         size={'sm'}
         className="w-full"
+        type="button"
+        disabled={isLoading}
       >
         {isLoading ? null : <Icons.Google className="mr-2 h-4 w-4" />}
         Google

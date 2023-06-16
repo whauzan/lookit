@@ -52,7 +52,7 @@ const Page = () => {
       });
     },
     onSuccess: (data) => {
-      router.push(`/r/${data}`);
+      router.push(`/l/${data}`);
     },
   });
 
@@ -70,7 +70,7 @@ const Page = () => {
           </p>
           <div className="relative">
             <p className="absolute inset-y-0 left-0 grid w-8 place-items-center text-sm text-zinc-400">
-              r/
+              l/
             </p>
             <Input
               value={input}
